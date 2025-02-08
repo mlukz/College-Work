@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>UNO Rulebook</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cover Page -->
+    <section id="cover">
+        <div class="cover-content">
+            <h1>Welcome to the UNO Rulebook!</h1>
+            <img src="uno_logo.png" alt="UNO Logo" class="cover-logo">
+            <p>Learn how to play UNO with this interactive rulebook. Click below to get started.</p>
+            <button onclick="window.location.href='#rules'">Go to Rules</button>
+        </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section id="rules">
+        <h2>UNO Game Rules</h2>
+        <p>Here you will find everything you need to know about the UNO game, from basic rules to special cards.</p>
+
+        <!-- Buttons for each category of rules -->
+        <button class="accordion">Basic Rules</button>
+        <div class="panel">
+            <p>UNO is a classic card game where players try to get rid of all their cards by matching them with the top card on the discard pile based on color or number. The first player to play all their cards wins.</p>
+        </div>
+
+        <button class="accordion">Action Cards</button>
+        <div class="panel">
+            <p>There are special cards in UNO that add action to the game: Skip, Reverse, Draw Two, Wild, and Wild Draw Four.</p>
+            <img src="skip_card.png" alt="Skip Card" class="rule-image">
+            <img src="reverse_card.jpg" alt="Reverse Card" class="rule-image">
+            <img src="draw_two_card.png" alt="Draw Two Card" class="rule-image">
+        </div>
+
+        <button class="accordion">Special Rules</button>
+        <div class="panel">
+            <p>If a player has only one card left, they must say "UNO!" If another player catches them not saying "UNO" before the next player’s turn, the player must draw two cards.</p>
+        </div>
+
+        <button onclick="window.location.href='#cover'">Back to Cover</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 UNO Game. Created by Munna Lukes.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
