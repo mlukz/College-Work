@@ -31,12 +31,3 @@ c1 = client.Client(20, "Janet O Reilly", "0874562732", "joreilly02@gmail.com")
 
 vw1 = Viewing(1100, datetime(2024, 2, 1, 14, 30), res1, c1, 310000, "Great house in a lovely location")
 print(vw1.__str__())
-
-#comm1 = CommericialProperty(420, "1 Infinity Road, Wilton Industrial Park, Cork", "Cork", 500000, 2000, Status.UNDEROFFER, "Modern 3 story office building", Purpose.OFFICE)
-#comm1.showDetails()
-
-#c2 = client.Client(25, "Slick Software Systems Ltd.", "021-4611222", "slicksoftware@sssl.com")
-#print(c2.__str__())
-
-#vw2 = Viewing(1108, datetime(2024, 2, 6, 9, 0), comm1, c2, 475000, "Client thinks property is over-priced")
-#print(vw2.__str__())
