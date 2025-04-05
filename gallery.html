@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gallery | Iron Forge Combat Gear</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        body h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-top: 20px;
+            font-family: sans-serif;
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+
+<body class="gallery-page">
+    <!-- Navigation bar -->
+    <nav class="navbar">         
+        <a href="landing1.html" class="logo">             
+            <img src="images/logo.png" alt="IRON FORGE COMBAT GEAR">      <!-- IRON FORGE logo -->     
+        </a>         
+        <a href="home1.html">Home</a>         
+        <a href="about.html">About</a>         
+        <a href="gallery.html">Gallery</a>         
+        <a href="shop.html">Shop</a>         
+        <a href="basket.html">Basket</a>     
+    
+    <!-- Drop down for account -->  
+        <div class="dropdown">             
+            <button class="dropbtn">Account</button>             
+            <div class="dropdown-content">                 
+                <a href="signin.html">Sign in</a>                 
+                <a href="signup.html">Sign Up</a>             
+            </div>         
+        </div>  
+    
+        <!-- Search bar -->  
+        <div class="search-bar">             
+            <input type="text" placeholder="Enter search term ...">             
+            <button>🔍</button>         
+        </div>  
+    </nav>
+
+    <!-- Space between nav and body content  -->
+    <br><br><br><br><br>
+
+    <!-- Slideshow Container -->
+    <div class="slideshow-container" id="videoSlideshow">
+        <!-- Video 1 -->
+        <div class="myVideos fade">
+            <div class="video-title">Tactical Gear in Action</div>
+            <video autoplay muted loop>
+                <source src="images/video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <!-- Video 2 -->
+        <div class="myVideos fade">
+            <div class="video-title">Extreme Combat Training</div>
+            <video autoplay muted loop>
+                <source src="images/video3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <!-- Video 3 -->
+        <div class="myVideos fade">
+            <div class="video-title">Beyond the Fight: Moments of Mutual Respect</div>
+            <video autoplay muted loop>
+                <source src="images/video4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <!-- Video 4 -->
+        <div class="myVideos fade">
+            <div class="video-title">The Art of Shadowboxing: Technique in Motion</div>
+            <video autoplay muted loop>
+                <source src="images/video5.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+
+    <!-- Dots/Indicators -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+        <span class="dot" onclick="currentSlide(4)"></span> 
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        let slideInterval;
+
+        // Show initial slides
+        showSlides(slideIndex);
+
+        // Auto-advance slides every 5 seconds
+        function startSlideShow() {
+            slideInterval = setInterval(() => {
+                plusSlides(1);
+            }, 5000);
+        }
+
+        // Stop auto-advance when user interacts
+        function stopSlideShow() {
+            clearInterval(slideInterval);
+        }
+
+        // Next/previous controls
+        function plusSlides(n) {
+            stopSlideShow();
+            showSlides(slideIndex += n);
+            startSlideShow();
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            stopSlideShow();
+            showSlides(slideIndex = n);
+            startSlideShow();
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("myVideos");
+            let dots = document.getElementsByClassName("dot");
+            
+            // Wrap around logic
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+
+            // Hide all slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+
+            // Remove active state from all dots
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            // Display current slide and mark dot as active
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+
+            // Pause other videos, play current video
+            let videos = document.querySelectorAll('.myVideos video');
+            videos.forEach((video, index) => {
+                if (index === slideIndex - 1) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+        }
+
+        // Start auto-play when page loads
+        document.addEventListener('DOMContentLoaded', startSlideShow);
+    </script>
+
+<!-- Social media posts -->
+<section class="social-feed">
+    <h2>Keep up with our Instagram!</h2>
+    <div class="feed-container">>
+      <div class="insta-post">
+        <img src="images/post1.jpg" alt="Instagram Post 1">
+        <div class="insta-caption">
+          <p>New Elite Black-out Collection dropping this weekend! #IronForge #CombatGear</p>
+          <span class="insta-likes">❤️ 243 likes</span>
+        </div>
+      </div>
+      <div class="insta-post">
+        <img src="images/post2.jpg" alt="Instagram Post 2">
+        <div class="insta-caption">
+          <p>Team Iron Forge crushing it at the Championships! #Champions #FightNight</p>
+          <span class="insta-likes">❤️ 187 likes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Newsletter Section (keep existing) -->
+    <div class="newsletter">
+        <h1>IRON FORGE NEWSLETTER</h1>
+        <p>Subscribe now to stay informed of the latest product releases, special offers, and much more in our exclusive newsletter!</p>
+        <input type="text" placeholder="My email">
+        <button>Subscribe</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <a class="footer-text"> © 2025 | Iron Forge Limited | All Rights Reserved. | Built for Warriors, Engineered for Combat.</a>
+        <a href="https://www.facebook.com/people/Iron-Forge/pfbid09S8UEJiooud3D8ASQMZnYnb5cvSBPAkrBaQ82A7JZoKikLjXwqEMUNtUk8VjoJsnl/?sk=about" class="fa fa-facebook"></a>
+        <a href="https://x.com/munnalukes" class="fa fa-twitter"></a>
+        <a href="https://www.instagram.com/ironforgecombatgear/" class="fa fa-instagram"></a>
+        <a href="https://www.youtube.com/channel/UC9l7J9j8Z2J1X2ZC4Z1Zz1Q" class="fa fa-youtube"></a>
+    </footer>
+</body>
+</html>

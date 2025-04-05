@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Basket | Iron Forge Combat Gear</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        body {
+            background-color: #000000;
+        }
+        body h1, h3, p, a { 
+            font-family: sans-serif;
+        }
+        p {
+            color: orange;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation bar -->
+    <nav class="navbar">         
+        <a href="landing1.html" class="logo">             
+            <img src="images/logo.png" alt="IRON FORGE COMBAT GEAR">      <!-- IRON FORGE logo -->     
+        </a>         
+        <a href="home1.html">Home</a>         
+        <a href="about.html">About</a>         
+        <a href="gallery.html">Gallery</a>         
+        <a href="shop.html">Shop</a>         
+        <a href="basket.html">Basket</a>     
+    
+    <!-- Drop down for account -->  
+        <div class="dropdown">             
+            <button class="dropbtn">Account</button>             
+            <div class="dropdown-content">                 
+                <a href="signin.html">Sign in</a>                 
+                <a href="signup.html">Sign Up</a>             
+            </div>         
+        </div>  
+    
+        <!-- Search bar -->  
+        <div class="search-bar">             
+            <input type="text" placeholder="Enter search term ...">             
+            <button>🔍</button>         
+        </div>  
+    </nav>
+
+    <!-- Basket content -->
+    <div class="basket-container">
+        <h1 class="basket-title">Your Basket</h1>
+        
+        <div class="basket-items">
+            <!-- Basket Item 1 -->
+            <div class="basket-item">
+                <img src="images/black_red_coloured_shorts.jpeg" alt="Tactical Training Shorts">
+                <div class="basket-item-details">
+                    <h3>Tactical Training Shorts</h3>
+                    <p>€54.95</p>
+                    <div class="basket-item-actions">
+                        <input type="number" value="1" min="1" max="10">
+                        <button class="remove-item">Remove</button>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Basket Item 2 -->
+                <div class="basket-item">
+                    <img src="images/mens-top.jpg" alt="Performance Compression Top">
+                    <div class="basket-item-details">
+                        <h3>Performance Compression Top</h3>
+                        <p>€59.99</p>
+                        <div class="basket-item-actions">
+                            <input type="number" value="1" min="1" max="10">
+                            <button class="remove-item">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basket Summary -->
+            <div class="basket-summary">
+                <h3>Total: €114.94</h3>
+            <div>
+                <a class="checkout-button" href="#">Proceed to Checkout</a>
+            </div>
+            
+        
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <a class="footer-text">© 2025 | Iron Forge Limited | All Rights Reserved. | Built for Warriors, Engineered for Combat.</a>
+        <a href="https://www.facebook.com/people/Iron-Forge/pfbid09S8UEJiooud3D8ASQMZnYnb5cvSBPAkrBaQ82A7JZoKikLjXwqEMUNtUk8VjoJsnl/?sk=about" class="fa fa-facebook"></a>
+        <a href="https://x.com/munnalukes" class="fa fa-twitter"></a>
+        <a href="https://www.instagram.com/ironforgecombatgear/" class="fa fa-instagram"></a>
+        <a href="https://www.youtube.com/channel/UC9l7J9j8Z2J1X2ZC4Z1Zz1Q" class="fa fa-youtube"></a>
+    </footer>
+</body>
+</html>

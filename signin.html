@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sign In | Iron Forge Combat Gear</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="mystyle.css">
+        <style>
+            body {
+                background-color: #000000;
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Navigation bar (same as before) -->
+        <nav class="navbar">         
+            <a href="landing1.html" class="logo">             
+                <img src="images/logo.png" alt="IRON FORGE COMBAT GEAR">     
+            </a>         
+            <a href="home1.html">Home</a>         
+            <a href="about.html">About</a>         
+            <a href="gallery.html">Gallery</a>         
+            <a href="shop.html">Shop</a>         
+            <a href="basket.html">Basket</a>     
+        
+            <!-- Drop down for account -->  
+            <div class="dropdown">             
+                <button class="dropbtn">Account</button>             
+                <div class="dropdown-content">                 
+                    <a href="signin.html">Sign in</a>                 
+                    <a href="signup.html">Sign Up</a>             
+                </div>         
+            </div>  
+        
+            <!-- Search bar -->  
+            <div class="search-bar">             
+                <input type="text" placeholder="Enter search term ...">             
+                <button>🔍</button>         
+            </div>  
+        </nav>
+    
+        <!-- Space between nav and body content -->
+        <br><br><br><br><br><b><br></b>
+    
+        <!-- Sign In form with Enhanced Validation -->
+        <main>
+            <form action="https://httpbin.org/post" method="post" class="signin-form" id="signin-form" novalidate>
+                <fieldset>
+                    <legend>Sign In</legend>
+        
+                    <label for="email">E-mail:</label>
+                    <input 
+                        type="email" 
+                        placeholder="Enter Email" 
+                        id="email" 
+                        name="email"
+                        required 
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        title="Enter a valid email address"
+                    >
+                    <div id="email-error" class="error-message">Please enter a valid email address</div>
+                    <br>
+        
+                    <label for="password">Password:</label>
+                    <input 
+                        type="password" 
+                        placeholder="Enter Password" 
+                        id="password" 
+                        name="password"
+                        required 
+                        minlength="8"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Must contain at least one number, one uppercase and lowercase letter, and be at least 8 characters long"
+                    >
+                    <div id="password-error" class="error-message">Password must be at least 8 characters long and contain uppercase, lowercase, and a number</div>
+                    <br>
+        
+                    <input type="submit" value="Sign In">
+                </fieldset>
+            </form>
+        
+            <p class="signin-text">Don't have an account? <a href="signup.html">Sign Up</a></p>
+            <p class="signin-text"><a href="#">Forgot Password?</a></p>
+        </main>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = document.getElementById('signin-form');
+                const emailInput = document.getElementById('email');
+                const passwordInput = document.getElementById('password');
+                const emailError = document.getElementById('email-error');
+                const passwordError = document.getElementById('password-error');
+
+                // Custom validation function
+                function validateForm() {
+                    let isValid = true;
+
+                    // Email validation
+                    if (!emailInput.validity.valid) {
+                        emailError.style.display = 'block';
+                        isValid = false;
+                    } else {
+                        emailError.style.display = 'none';
+                    }
+
+                    // Password validation
+                    if (!passwordInput.validity.valid) {
+                        passwordError.style.display = 'block';
+                        isValid = false;
+                    } else {
+                        passwordError.style.display = 'none';
+                    }
+
+                    return isValid;
+                }
+
+                // Add event listeners for real-time validation
+                emailInput.addEventListener('input', function() {
+                    if (emailInput.validity.valid) {
+                        emailError.style.display = 'none';
+                    } else {
+                        emailError.style.display = 'block';
+                    }
+                });
+
+                passwordInput.addEventListener('input', function() {
+                    if (passwordInput.validity.valid) {
+                        passwordError.style.display = 'none';
+                    } else {
+                        passwordError.style.display = 'block';
+                    }
+                });
+
+                // Form submission validation
+                form.addEventListener('submit', function(event) {
+                    if (!validateForm()) {
+                        event.preventDefault();
+                    }
+                });
+            });
+        </script>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <a class="footer-text"> © 2025 | Iron Forge Limited | All Rights Reserved. | Built for Warriors, Engineered for Combat.</a>
+            <a href="https://www.facebook.com/people/Iron-Forge/pfbid09S8UEJiooud3D8ASQMZnYnb5cvSBPAkrBaQ82A7JZoKikLjXwqEMUNtUk8VjoJsnl/?sk=about" class="fa fa-facebook"></a>
+            <a href="https://x.com/munnalukes" class="fa fa-twitter"></a>
+            <a href="https://www.instagram.com/ironforgecombatgear/" class="fa fa-instagram"></a>
+            <a href="https://www.youtube.com/channel/UC9l7J9j8Z2J1X2ZC4Z1Zz1Q" class="fa fa-youtube"></a>
+        </footer>
+        
+    </body>
+</html>

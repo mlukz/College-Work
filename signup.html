@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up | Iron Forge Combat Gear</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        body {
+            background-color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+            <!-- Navigation bar -->   
+            <nav class="navbar">         
+                <a href="landing1.html" class="logo">             
+                    <img src="images/logo.png" alt="IRON FORGE COMBAT GEAR">      <!-- IRON FORGE logo -->     
+                </a>         
+                <a href="home1.html">Home</a>         
+                <a href="about.html">About</a>         
+                <a href="gallery.html">Gallery</a>         
+                <a href="shop.html">Shop</a>         
+                <a href="basket.html">Basket</a>     
+            
+            <!-- Drop down for account -->  
+                <div class="dropdown">             
+                    <button class="dropbtn">Account</button>             
+                    <div class="dropdown-content">                 
+                        <a href="signin.html">Sign in</a>                 
+                        <a href="signup.html">Sign Up</a>             
+                    </div>         
+                </div>  
+            
+                <!-- Search bar -->  
+                <div class="search-bar">             
+                    <input type="text" placeholder="Enter search term ...">             
+                    <button>🔍</button>         
+                </div>  
+            </nav>
+
+    <!-- Sign up form -->
+    <br><br><br><br><br><br>
+    
+    <!-- Sign Up form -->
+    <main>
+        <form action="https://httpbin.org/post" method="post" class="signup-form" id="signup-form">
+            <fieldset>
+                <legend>Sign Up</legend>
+
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter Full Name" required><br>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Enter Email" required><br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required><br>
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required><br>
+
+                <input type="submit" value="Sign Up">
+            </fieldset>
+        </form>
+        
+        <!-- Sign in link -->
+        <p class="signup-text">Already have an account? <a href="signin.html">Sign In</a></p>
+    </main>
+    <br>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <a class="footer-text"> © 2025 | Iron Forge Limited | All Rights Reserved. | Built for Warriors, Engineered for Combat.</a>
+        <a href="https://www.facebook.com/people/Iron-Forge/pfbid09S8UEJiooud3D8ASQMZnYnb5cvSBPAkrBaQ82A7JZoKikLjXwqEMUNtUk8VjoJsnl/?sk=about" class="fa fa-facebook"></a>
+        <a href="https://x.com/munnalukes" class="fa fa-twitter"></a>
+        <a href="https://www.instagram.com/ironforgecombatgear/" class="fa fa-instagram"></a>
+        <a href="https://www.youtube.com/channel/UC9l7J9j8Z2J1X2ZC4Z1Zz1Q" class="fa fa-youtube"></a>
+    </footer>
+    
+</body>
+</html>

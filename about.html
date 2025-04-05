@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Us | Iron Forge Combat Gear</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            color: gold;
+            text-align: center;
+            margin-top: 10%;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        #chart_div {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            margin: 20px auto;
+        }
+    </style>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+    google.charts.load('current', {
+        'packages': ['geochart'],
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+    });
+    google.charts.setOnLoadCallback(drawRegionsMap);
+
+    function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+            ['Country', 'Population'],
+            ['China', 1363800000],
+            ['India', 1242620000],
+            ['United States', 317842000],
+            ['Indonesia', 247424598],
+            ['Brazil', 201032714],
+            ['Pakistan', 186134000],
+            ['Nigeria', 173615000],
+            ['Bangladesh', 152518015],
+            ['Russia', 146019512],
+            ['Japan', 127120000]
+        ]);
+
+        var options = {
+            colorAxis: {colors: ['#e7711c', '#4374e0']},
+            backgroundColor: 'black',
+            datalessRegionColor: '#444444',
+            defaultColor: '#f5f5f5',
+            width: 600,
+            height: 400
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+    </script>
+</head>
+
+<body class="about-page">
+    <!-- Navigation bar -->
+    <nav class="navbar">         
+        <a href="landing1.html" class="logo">             
+            <img src="images/logo.png" alt="IRON FORGE COMBAT GEAR">      <!-- IRON FORGE logo -->     
+        </a>         
+        <a href="home1.html">Home</a>         
+        <a href="about.html">About</a>         
+        <a href="gallery.html">Gallery</a>         
+        <a href="shop.html">Shop</a>         
+        <a href="basket.html">Basket</a>     
+    
+    <!-- Drop down for account -->  
+        <div class="dropdown">             
+            <button class="dropbtn">Account</button>             
+            <div class="dropdown-content">                 
+                <a href="signin.html">Sign in</a>                 
+                <a href="signup.html">Sign Up</a>             
+            </div>         
+        </div>  
+    
+        <!-- Search bar -->  
+        <div class="search-bar">             
+            <input type="text" placeholder="Enter search term ...">             
+            <button>🔍</button>         
+        </div>  
+    </nav>
+    
+    <!-- About content -->
+    <div class="about-content">
+        <h1>Empowering Fighters, One Piece of Gear at a Time</h1>
+
+        <!-- Brand Story -->
+        <div class="section">
+            <h2>Our Brand Story</h2>
+            <p>At Iron Forge Combat Gear, we live and breathe MMA. Founded in 2020 by Leo Smith, a lifelong martial artist, our mission is to provide fighters and fans with high-quality gear that performs as hard as they do. From humble beginnings in a small gym to becoming a trusted name in the MMA community, we're proud to support fighters at every level.</p>
+        </div>
+
+        <!-- Core Values -->
+        <div class="section">
+            <h2>Our Core Values</h2>
+            <p>We believe in empowering fighters with gear that's built to last. Quality, performance, and community are at the heart of everything we do.</p>
+        </div>
+
+        <!-- Product Philosophy -->
+        <div class="section">
+            <h2>Our Product Philosophy</h2>
+            <p>Every product we create is designed with input from professional fighters and thoroughly tested in real training scenarios. We don't just sell gear—we create tools for champions.</p>
+        </div>
+
+        <!-- Meet the Team -->
+        <div class="section">
+            <h2>Meet the Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/team1.jpg" alt="John Doe">
+                    <h3>Leo Smith</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/team2.jpg" alt="Jane Smith">
+                    <h3>Jane Jones</h3>
+                    <p>Head Designer</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/team3.jpg" alt="Mike Johnson">
+                    <h3>Mike Johnson</h3>
+                    <p>Product Tester</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Customer Testimonials -->
+        <div class="section">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <img src="images/customer1.jpg" alt="Customer 1">
+                    <p>"The best gear I've ever used! Highly recommend Iron Forge Combat Gear."</p>
+                    <p>- Sarah T.</p>
+                </div>
+                <div class="testimonial">
+                    <img src="images/customer2.jpg" alt="Customer 2">
+                    <p>"Durable, comfortable, and stylish. Perfect for training and competitions."</p>
+                    <p>- Mike R.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="section">
+            <h2>Join the Iron Forge Family</h2>
+            <p>Ready to gear up? Shop our latest collection or join our community of fighters and fans.</p>
+        </div>
+
+        <h2>Global Reach</h2>
+        <p class="global-reach-text">Our products are trusted by fighters around the world. Check out our global reach in the map below.</p>
+        <div id="chart_div"></div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>Email: info@ironforge.com | Phone: +353 837 890</p>
+        </div>       
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <a class="footer-text"> © 2025 | Iron Forge Limited | All Rights Reserved. | Built for Warriors, Engineered for Combat.</a>
+        <a href="https://www.facebook.com/people/Iron-Forge/pfbid09S8UEJiooud3D8ASQMZnYnb5cvSBPAkrBaQ82A7JZoKikLjXwqEMUNtUk8VjoJsnl/?sk=about" class="fa fa-facebook"></a>
+        <a href="https://x.com/munnalukes" class="fa fa-twitter"></a>
+        <a href="https://www.instagram.com/ironforgecombatgear/" class="fa fa-instagram"></a>
+        <a href="https://www.youtube.com/channel/UC9l7J9j8Z2J1X2ZC4Z1Zz1Q" class="fa fa-youtube"></a>
+    </footer>
+</body>
+</html>
